@@ -1,34 +1,36 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
-import image from "@/Images/profile.png"
+import image from "@/Images/profile.png";
 import Image from "next/image";
+import profile from "@/Images/cloudy.jpg";
 
 type Color =
-  | "bg-white"
-  | "bg-black"
-  | "bg-gray-300"
-  | "bg-yellow-300"
-  | "bg-green-900"
-  | "bg-blue-900"
-  | "bg-pink-900"
-  | "bg-purple-900"
-  | "bg-yellow-200"
+  | "white"
+  | "black"
+  | "gray"
+  | "yellow"
+  | "green"
+  | "blue"
+  | "pink"
+  | "purple"
+  | "red"
   | "";
 type Gradient =
-  | "bg-gradient-to-r from-yellow-300 to-green-300"
-  | "bg-gradient-to-r from-blue-300 to-purple-300"
-  | "bg-gradient-to-r from-pink-300 to-yellow-300"
-  | "bg-gradient-radial from-yellow-300 to-green-300"
-  | "bg-gradient-radial from-blue-900 to-purple-300"
-  | "bg-gradient-radial from-pink-900 to-yellow-300"
+  | "linear-gradient(to right, yellow, green)"
+  | "linear-gradient(to right, blue, purple)"
+  | "linear-gradient(to right, pink, yellow)"
+  | "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)"
+  | "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)"
+  | "radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)"
+  | "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)"
   | "";
 
 const FrameFirst: React.FC = () => {
   const [solidColor, setSolidColor] = useState<Color>("");
   const [linearGradient, setLinearGradient] = useState<Gradient>("");
   const [radialGradient, setRadialGradient] = useState<Gradient>("");
-  const [foregroundColor, setForegroundColor] = useState<Color>("bg-white");
+  const [foregroundColor, setForegroundColor] = useState<Color>("black");
 
   const handleSolidColorClick = (color: Color) => {
     setSolidColor(color);
@@ -124,36 +126,37 @@ const FrameFirst: React.FC = () => {
                 <h3 className="font-semibold mb-2">Solids</h3>
                 <div className="grid grid-cols-7 gap-2">
                   <div
-                    className="w-8 h-8 bg-black cursor-pointer"
-                    onClick={() => handleSolidColorClick("bg-black")}
+                    className="w-10 h-10 bg-black cursor-pointer"
+                    onClick={() => handleSolidColorClick("black")}
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gray-300 border border-black cursor-pointer"
-                    onClick={() => handleSolidColorClick("bg-gray-300")}
+                    className="w-10 h-10 bg-gray-300 cursor-pointer"
+                    onClick={() => handleSolidColorClick("gray")}
                   ></div>
                   <div
-                    className="w-8 h-8 bg-yellow-300 cursor-pointer"
-                    onClick={() => handleSolidColorClick("bg-yellow-300")}
+                    className="w-10 h-10 bg-yellow-300 cursor-pointer"
+                    onClick={() => handleSolidColorClick("yellow")}
                   ></div>
                   <div
-                    className="w-8 h-8 bg-green-300 cursor-pointer"
-                    onClick={() => handleSolidColorClick("bg-green-900")}
+                    className="w-10 h-10 bg-green-300 cursor-pointer"
+                    onClick={() => handleSolidColorClick("green")}
                   ></div>
                   <div
-                    className="w-8 h-8 bg-blue-300 cursor-pointer"
-                    onClick={() => handleSolidColorClick("bg-blue-900")}
+                    className="w-10 h-10 bg-blue-300 cursor-pointer"
+                    onClick={() => handleSolidColorClick("blue")}
                   ></div>
                   <div
-                    className="w-8 h-8 bg-pink-300 cursor-pointer"
-                    onClick={() => handleSolidColorClick("bg-pink-900")}
+                    className="w-10 h-10 bg-pink-400 cursor-pointer"
+                    onClick={() => handleSolidColorClick("pink")}
                   ></div>
                   <div
-                    className="w-8 h-8 bg-purple-300 cursor-pointer"
-                    onClick={() => handleSolidColorClick("bg-purple-900")}
+                    className="w-10 h-10 bg-purple-300 cursor-pointer"
+                    onClick={() => handleSolidColorClick("purple")}
                   ></div>
                   <div
-                    className="w-8 h-8 bg-yellow-200 cursor-pointer"
-                    onClick={() => handleSolidColorClick("bg-yellow-200")}
+                    className="w-10 h-10 cursor-pointer"
+                    style={{ backgroundColor: "#f50157" }}
+                    onClick={() => handleSolidColorClick("red")}
                   ></div>
                 </div>
               </div>
@@ -163,142 +166,192 @@ const FrameFirst: React.FC = () => {
                 <h3 className="font-semibold mb-2">Linear Gradients</h3>
                 <div className="grid grid-cols-7 gap-2">
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-yellow-300 to-green-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-to-r from-yellow-300 to-green-300 cursor-pointer"
                     onClick={() =>
                       handleLinearGradientClick(
-                        "bg-gradient-to-r from-yellow-300 to-green-300"
+                        "linear-gradient(to right, yellow, green)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-blue-300 to-purple-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-to-r from-blue-300 to-purple-300 cursor-pointer"
                     onClick={() =>
                       handleLinearGradientClick(
-                        "bg-gradient-to-r from-blue-300 to-purple-300"
+                        "linear-gradient(to right, blue, purple)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-pink-300 to-yellow-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-to-r from-pink-300 to-yellow-300 cursor-pointer"
                     onClick={() =>
                       handleLinearGradientClick(
-                        "bg-gradient-to-r from-pink-300 to-yellow-300"
+                        "linear-gradient(to right, pink, yellow)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-yellow-300 to-green-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-to-r from-yellow-300 to-green-300 cursor-pointer"
                     onClick={() =>
                       handleLinearGradientClick(
-                        "bg-gradient-to-r from-yellow-300 to-green-300"
+                        "linear-gradient(to right, yellow, green)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-blue-300 to-purple-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-to-r from-blue-300 to-purple-300 cursor-pointer"
                     onClick={() =>
                       handleLinearGradientClick(
-                        "bg-gradient-to-r from-blue-300 to-purple-300"
+                        "linear-gradient(to right, blue, purple)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-pink-300 to-yellow-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-to-r from-pink-300 to-yellow-300 cursor-pointer"
                     onClick={() =>
                       handleLinearGradientClick(
-                        "bg-gradient-to-r from-pink-300 to-yellow-300"
+                        "linear-gradient(to right, pink, yellow)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-yellow-300 to-green-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-to-r from-yellow-300 to-green-300 cursor-pointer"
                     onClick={() =>
                       handleLinearGradientClick(
-                        "bg-gradient-to-r from-yellow-300 to-green-300"
+                        "linear-gradient(to right, yellow, green)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-blue-300 to-purple-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-to-r from-blue-300 to-purple-300 cursor-pointer"
                     onClick={() =>
                       handleLinearGradientClick(
-                        "bg-gradient-to-r from-blue-300 to-purple-300"
+                        "linear-gradient(to right, blue, purple)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-pink-300 to-yellow-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-to-r from-pink-300 to-yellow-300 cursor-pointer"
                     onClick={() =>
                       handleLinearGradientClick(
-                        "bg-gradient-to-r from-pink-300 to-yellow-300"
+                        "linear-gradient(to right, pink, yellow)"
                       )
                     }
                   ></div>
-                  {/* Add more linear gradient colors as needed */}
                 </div>
               </div>
-
               {/* Radial Gradients */}
               <div className="mb-3">
                 <h3 className="font-semibold mb-2">Radial Gradients</h3>
                 <div className="grid grid-cols-7 gap-2">
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-yellow-300 to-green-300 cursor-pointer"
-                    onClick={() =>
-                      handleLinearGradientClick(
-                        "bg-gradient-to-r from-yellow-300 to-green-300"
-                      )
-                    }
-                  ></div>
-                  <div
-                    className="w-8 h-8 bg-gradient-to-r from-blue-300 to-purple-300 cursor-pointer"
-                    onClick={() =>
-                      handleLinearGradientClick(
-                        "bg-gradient-to-r from-blue-300 to-purple-300"
-                      )
-                    }
-                  ></div>
-                  <div
-                    className="w-8 h-8 bg-gradient-to-r from-pink-300 to-yellow-300 cursor-pointer"
-                    onClick={() =>
-                      handleLinearGradientClick(
-                        "bg-gradient-to-r from-pink-300 to-yellow-300"
-                      )
-                    }
-                  ></div>
-                  <div
-                    className="w-8 h-8 bg-gradient-radial from-pink-900 to-yellow-300 cursor-pointer"
+                    className="w-10 h-10 cursor-pointer"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);",
+                    }}
                     onClick={() =>
                       handleRadialGradientClick(
-                        "bg-gradient-radial from-pink-900 to-yellow-300"
+                        "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-yellow-300 to-green-300 cursor-pointer"
+                    className="w-10 h-10 cursor-pointer"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)",
+                    }}
                     onClick={() =>
-                      handleLinearGradientClick(
-                        "bg-gradient-to-r from-yellow-300 to-green-300"
+                      handleRadialGradientClick(
+                        "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)"
+                      )
+                    }
+                  ></div>
+
+                  <div
+                    className="w-10 h-10 bg-gradient-radial from-pink-300 to-yellow-300 cursor-pointer"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)",
+                    }}
+                    onClick={() =>
+                      handleRadialGradientClick(
+                        "radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-blue-300 to-purple-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-radial from-pink-300 to-yellow-300 cursor-pointer"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
+                    }}
                     onClick={() =>
-                      handleLinearGradientClick(
-                        "bg-gradient-to-r from-blue-300 to-purple-300"
+                      handleRadialGradientClick(
+                        "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)"
                       )
                     }
                   ></div>
                   <div
-                    className="w-8 h-8 bg-gradient-to-r from-pink-300 to-yellow-300 cursor-pointer"
+                    className="w-10 h-10 bg-gradient-radial from-pink-300 to-yellow-300 cursor-pointer"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)",
+                    }}
                     onClick={() =>
-                      handleLinearGradientClick(
-                        "bg-gradient-to-r from-pink-300 to-yellow-300"
+                      handleRadialGradientClick(
+                        "radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)"
                       )
                     }
                   ></div>
-                  {/* Add more radial gradient colors as needed */}
+                  <div
+                    className="w-10 h-10 cursor-pointer"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);",
+                    }}
+                    onClick={() =>
+                      handleRadialGradientClick(
+                        "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)"
+                      )
+                    }
+                  ></div>
+                  <div
+                    className="w-10 h-10 cursor-pointer"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)",
+                    }}
+                    onClick={() =>
+                      handleRadialGradientClick(
+                        "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)"
+                      )
+                    }
+                  ></div>
+                  <div
+                    className="w-10 h-10 cursor-pointer"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);",
+                    }}
+                    onClick={() =>
+                      handleRadialGradientClick(
+                        "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)"
+                      )
+                    }
+                  ></div>
+                  <div
+                    className="w-10 h-10 cursor-pointer"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)",
+                    }}
+                    onClick={() =>
+                      handleRadialGradientClick(
+                        "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)"
+                      )
+                    }
+                  ></div>
                 </div>
               </div>
 
@@ -308,45 +361,78 @@ const FrameFirst: React.FC = () => {
                 <div className="flex gap-1">
                   <div
                     className="w-8 h-8 bg-black cursor-pointer"
-                    onClick={() => handleForegroundColorClick("bg-black")}
+                    onClick={() => handleForegroundColorClick("black")}
                   ></div>
                   <div
                     className="w-8 h-8 bg-white border border-black cursor-pointer"
-                    onClick={() => handleForegroundColorClick("bg-white")}
+                    onClick={() => handleForegroundColorClick("white")}
                   ></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-4 w-3/4">
+          <div className="mt-4 w-3/4 shadow rounded">
             <div
-              className={`bg-white p-4 rounded shadow ${solidColor} ${linearGradient} ${radialGradient}`}
+              className="bg-white p-4 rounded shadow"
+              style={{
+                backgroundColor: solidColor || undefined,
+                backgroundImage: linearGradient || radialGradient || undefined,
+              }}
             >
               <div
-                className={`flex items-start mb-4 flex-col p-4 ${foregroundColor}`}
+                style={{
+                  border: "3px dashed #cecece",
+                  padding: "5px",
+                  borderRadius: "10px",
+                }}
               >
-                <div className="w-20 h-20 rounded-full overflow-hidden mb-4 ml-4">
-                  <Image src={image} alt="Profile Picture" />
-                </div>
-                <div className="ml-4">
-                <h1 className={`text-2xl font-bold ${foregroundColor}`}>
-                    Mason Parker
-                  </h1>
-                  <p className={foregroundColor}>Graphics & UI/UX Designer</p>
-                  <p className={foregroundColor}>Denver, United States</p>
-                </div>
+                <Image
+                  src={profile}
+                  alt="profile-pic"
+                  style={{
+                    width: "100%",
+                    borderRadius: "8px",
+                    height: "200px",
+                  }}
+                />
               </div>
-              <div className="bg-white border-slate-800 p-4 w-3/4 border-dashed">
-                <p>
-                  I am a visionary Graphics and UI/UX Designer, seamlessly
-                  blending artistic flair with technical expertise. With a
-                  degree in Graphic Design, I consistently deliver visually
-                  stunning and user-centric solutions, leaving an indelible mark
-                  on the digital landscape. As a trusted collaborator, I am
-                  dedicated to crafting pixel-perfect UIs and captivating
-                  graphics that elevate user experiences.
-                </p>
+              <div
+                className="p-5 flex justify-left items-left"
+                style={{ color: foregroundColor }}
+              >
+                <div className="flex items-left flex-col">
+                  <div className="text-left">
+                    <Image
+                      src={image}
+                      alt="profile pic"
+                      className="w-24 h-24 rounded-full mb-4"
+                      style={{ marginTop: "-70px" }}
+                    />
+                    <p>Kushagra Singh</p>
+                    <p className="mt-1">Front-end Developer</p>
+                    <p className="mt-1">kushagra.singh@example.com</p>
+                  </div>
+                  <div
+                    style={{
+                      padding: "10px",
+                      border: "3px dashed #cecece",
+                      borderRadius: "10px",
+                      marginTop: "4%",
+                      width: "70%",
+                    }}
+                  >
+                    <p>
+                      I am a visionary Graphics and UI/UX Designer, seamlessly
+                      blending artistic flair with technical expertise. With a
+                      degree in Graphic Design, I consistently deliver visually
+                      stunning and user-centric solutions, leaving an indelible
+                      mark on the digital landscape. As a trusted collaborator,
+                      I am dedicated to crafting pixel-perfect UIs and
+                      captivating graphics that elevate user experiences.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

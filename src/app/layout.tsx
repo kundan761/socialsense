@@ -28,9 +28,6 @@ export default function RootLayout({
           <h2 style={{fontSize:"20px"}}>
             <Link href="/thirdframe">Chart</Link>
           </h2>
-          <h2 style={{fontSize:"20px"}}>
-            <Link href="/secframe">Profile</Link>
-          </h2>
         </div>
         {children}
       </body>

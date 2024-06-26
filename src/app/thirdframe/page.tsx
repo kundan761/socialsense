@@ -67,11 +67,11 @@ const thirdframe = () => {
         </div>
       </div>
 
-      <div className="flex" style={{ width: "100%", margin: "auto", alignContent: "baseline" }}>
-        <div style={{ width: "60%" }}>
+      <div className="flex gap-6" style={{ width: "100%", margin: "auto", alignContent: "baseline" }}>
+        <div  className="shadow rounded" style={{ width: "45%" }}>
           <Linegraph />
         </div>
-        <div style={{ width: "60%" }}>
+        <div  className="shadow rounded" style={{ width: "50%" }}>
           <DoughnutChart/>
         </div>
       </div>
