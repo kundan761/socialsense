@@ -16,14 +16,14 @@ export const cardData = [
     {
       logo: "Logo",
       title: "Revenue",
-      value: "3,182",
+      value: "2,000",
       change: "15.73%",
       changeDirection: "up",
     },
     {
       logo: "Logo",
       title: "Growth",
-      value: "3,182",
+      value: "2,000",
       change: "32.73%",
       changeDirection: "up",
     },

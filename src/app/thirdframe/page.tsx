@@ -3,7 +3,7 @@ import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Component } from "@/components/component/component";
 import { Linegraph } from "@/components/component/linegraph";
-import { cardData } from "@/Data/cardData"; // Import the data from data.js
+import { cardData } from "@/Data/cardData"; 
 import DoughnutChart from "@/components/component/Dhoughnutchart";
 
 const thirdframe = () => {
@@ -52,7 +52,7 @@ const thirdframe = () => {
             <div key={index} className="shadow rounded p-6">
               <div className="flex gap-6 mb-2">
                 <div>{card.logo}</div>
-                <div>{card.title}</div>
+                <div style={{fontWeight:"bold"}}>{card.title}</div>
               </div>
               <h1 className="mb-1">{card.value}</h1>
               <span style={{ color: card.changeDirection === "up" ? "green" : "red" }}>
