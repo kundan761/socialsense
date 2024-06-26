@@ -10,7 +10,7 @@ export function Linegraph() {
         <CardTitle>Total Customers</CardTitle>
       </CardHeader>
       <CardContent>
-        <LineChart className="aspect-[14/4]" />
+        <LineChart className="aspect-[12/4]" />
       </CardContent>
     </Card>
   );
