@@ -23,13 +23,13 @@ export default function RootLayout({
             <Link href="/">Home</Link>
           </h2>
           <h2 style={{fontSize:"20px"}}>
-            <Link href="/firstframe">First</Link>
+            <Link href="/firstframe">Theme</Link>
           </h2>
           <h2 style={{fontSize:"20px"}}>
-            <Link href="/secframe">Second</Link>
+            <Link href="/thirdframe">Chart</Link>
           </h2>
           <h2 style={{fontSize:"20px"}}>
-            <Link href="/thirdframe">Third</Link>
+            <Link href="/secframe">Profile</Link>
           </h2>
         </div>
         {children}
