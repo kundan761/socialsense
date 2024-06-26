@@ -11,7 +11,7 @@ This project is a theme customization application built using Next.js and TypeSc
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
+1. Clone the repository: `git clone https://github.com/kundan761/socialsense.git`
 2. Install dependencies: `npm install`
 
 ## Deployed link
