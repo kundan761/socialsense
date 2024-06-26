@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
 import image from "@/Images/profile.png";
@@ -57,7 +56,7 @@ const FrameFirst: React.FC = () => {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <div className="w-1/8 bg-gray-100 p-4">
+      <div className="w-1/8 bg-gray-100 p-4 hidden md:block">
         <div className="text-xl font-bold mb-6">Logo Here</div>
         <nav className="space-y-4">
           <a href="#" className="block p-2 hover:bg-gray-200">
@@ -93,7 +92,7 @@ const FrameFirst: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-8">
+      <div className="flex-1 p-8 flex-wrap">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Themes</h1>
           <div className="flex items-center">
@@ -118,7 +117,8 @@ const FrameFirst: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex gap-10">
+        {/* submain content */}
+        <div className="flex flex-row gap-10 flex-wrap" >
           <div className="bg-white p-4 rounded shadow w-1/8">
             <div className="grid grid-rows-4 gap-1">
               {/* Solids */}
@@ -372,7 +372,7 @@ const FrameFirst: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-4 w-3/4 shadow rounded">
+          <div className="shadow rounded " style={{width: "100%", maxWidth: "65%"}}>
             <div
               className="bg-white p-4 rounded shadow"
               style={{
